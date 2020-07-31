@@ -168,7 +168,6 @@ class _MainState extends State<Main> {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     // 位置情報の取得はビルドのたびに⾏う（変更を検知できるように）
     _getAppsFunction = _getApps();
     _getFavAppsFunction = _getFavApps();
@@ -180,38 +179,6 @@ class _MainState extends State<Main> {
         pages: pages,
         showBullets: true,
         skipCallback: () {
-=======
-    return Scaffold(
-      appBar: AppBar(
-          title: Text(
-            widget.title,
-            style: GoogleFonts.kanit(
-              textStyle: TextStyle(
-                decoration: TextDecoration.none,
-              ),
-            ),
-          ),
-          actions: currentPage == 0
-              ? <Widget>[
-                  // AppBar にボタンを用意して表示内容を切り替える処理が書かれている
-                  IconButton(
-                    icon: Icon(
-                        _viewType == 'grid' ? Icons.view_list : Icons.apps),
-                    onPressed: () => _toggleViewType(),
-                  )
-                ]
-              : <Widget>[]),
-      body: _getPage(currentPage),
-      bottomNavigationBar: FancyBottomNavigation(
-        tabs: [
-          TabData(iconData: Icons.home, title: "Home"),
-          TabData(iconData: Icons.search, title: "Search"),
-          TabData(iconData: Icons.star, title: "favorite")
-        ],
-        initialSelection: 0,
-        key: bottomNavigationKey,
-        onTabChangedListener: (position) {
->>>>>>> parent of 1dad947... 🍆 update: アプリアイコン・スプラッシュ設定、リファクタリング
           setState(() {
             _afterOverBoard = true;
             _finishOverBoard();
